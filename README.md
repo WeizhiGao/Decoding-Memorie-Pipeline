@@ -11,6 +11,8 @@ conda activate dmp
 
 You can automatically import models from HuggingFace by uncomment the code in `model/_load_model.py`. If you need offline mode, please first download models with network and replace the path in `model/_load_model.py` with your cache path.
 
+For BertScore model, please also uncomment the path in `pipeline/generate.py` to download the model.
+
 Please use available OpenAI key in `openai_models.py`
 
 ## Reproduce Main Results

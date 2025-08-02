@@ -32,6 +32,7 @@ from func.metric import *
 from models.openai_models import openai_query
 
 from transformers.cache_utils import Cache
+from _settings import MODEL_PATH
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--model', type=str, default='llama2-7b-chat')
@@ -108,7 +109,7 @@ def get_generations(model_name:str, args, seed=1, old_sequences=None, max_num_ge
     model, tokenizer = models.load_model_and_tokenizer(model_name, args.device)
     SenSimModel = SentenceTransformer('nli-roberta-large')
     # bertscore = BERTScore(model_name_or_path="bert-base-uncased", device="cuda")
-    bertscore = BERTScore(model_name_or_path="/proj/csc266/scratch/wgao23/.cache/huggingface/offline/models/bert-base-uncased", device="cuda")
+    bertscore = BERTScore(model_name_or_path=f"{MODEL_PATH}/bert-base-uncased", device="cuda")
 
     utils.seed_everything(seed)
     dataset = get_dataset_fn(args.dataset)(tokenizer, prompt_mode=args.prompt_mode)
