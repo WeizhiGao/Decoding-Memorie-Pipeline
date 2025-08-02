@@ -125,8 +125,8 @@ def get_sent_scores_bertscore(best_generation, batch_generations):
 def getAvgBertScore(bertscore, best_generated_text, generated_texts):
     sent_scores_bertscore = 0
     for item in generated_texts:
-        # sent_scores_bertscore += bertscore([item], [best_generated_text])["f1"]
-        sent_scores_bertscore += torch.tensor(0)  # 速度特别慢, 不用测试selfCheckGPT时关闭该函数
+        sent_scores_bertscore += bertscore([item], [best_generated_text])["f1"]
+        # sent_scores_bertscore += torch.tensor(0)  # 速度特别慢, 不用测试selfCheckGPT时关闭该函数
     sent_scores_bertscore = 1 - sent_scores_bertscore/len(generated_texts)
     return sent_scores_bertscore.cpu().item()
 
