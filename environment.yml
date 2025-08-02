@@ -6,10 +6,10 @@ channels:
 dependencies:
   - python=3.10
   - numpy
-  - pytorch
-  - torchvision
-  - torchaudio
-  - transformers
+  - pytorch # 2.5.1
+  - torchvision # 0.20.1
+  - torchaudio # 2.5.1
+  - transformers # 4.54.1
   - openai
   - pandas
   - tqdm
