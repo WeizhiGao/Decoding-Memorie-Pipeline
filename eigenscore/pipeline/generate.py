@@ -108,8 +108,17 @@ def get_generations(model_name:str, args, seed=1, old_sequences=None, max_num_ge
     device = args.device
     model, tokenizer = models.load_model_and_tokenizer(model_name, args.device)
     SenSimModel = SentenceTransformer('nli-roberta-large')
+    # # online usage
     # bertscore = BERTScore(model_name_or_path="bert-base-uncased", device="cuda")
-    bertscore = BERTScore(model_name_or_path=f"{MODEL_PATH}/bert-base-uncased", device="cuda")
+    # # offline usage
+
+    # from transformers import AutoTokenizer, AutoModelForMaskedLM
+    # tokenizer = AutoTokenizer.from_pretrained("google-bert/bert-base-uncased")
+    # model = AutoModelForMaskedLM.from_pretrained("google-bert/bert-base-uncased")
+    # model.save_pretrained("/lustre/orion/gen150/scratch/weizhigao/.cache/huggingface/offline/models/bert-base-uncased")
+    # tokenizer.save_pretrained("/lustre/orion/gen150/scratch/weizhigao/.cache/huggingface/offline/models/bert-base-uncased")
+
+    bertscore = BERTScore(model=model, user_tokenizer=tokenizer, device="cuda")
 
     utils.seed_everything(seed)
     dataset = get_dataset_fn(args.dataset)(tokenizer, prompt_mode=args.prompt_mode)
