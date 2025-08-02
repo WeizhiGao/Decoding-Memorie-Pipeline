@@ -7,6 +7,12 @@ conda env create -f environment.yml
 conda activate dmp
 ```
 
+## Model Preparation
+
+You can automatically import models from HuggingFace by uncomment the code in `model/_load_model.py`. If you need offline mode, please first download models with network and replace the path in `model/_load_model.py` with your cache path.
+
+Please use available OpenAI key in `openai_models.py`
+
 ## Reproduce Main Results
 
 For LN-Entropy, Lexical Similarity, SelfCheckGPT, and EigenScore, run with the following script
