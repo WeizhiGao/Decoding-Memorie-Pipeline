@@ -1,0 +1,32 @@
+name: dmp
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy
+  - pytorch
+  - torchvision
+  - torchaudio
+  - transformers
+  - openai
+  - pandas
+  - tqdm
+  - scikit-learn
+  - matplotlib
+  - rouge-score
+  - sentence-transformers
+  - evaluate
+  - datasets
+  - ipdb
+  - pandarallel
+  - pip
+  - pip:
+      - persist_to_disk
+      - selfcheckgpt 
+      - accelerate
+      - torchmetrics
+      - wandb
+      - tiktoken
+      - tenacity
