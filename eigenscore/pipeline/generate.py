@@ -111,7 +111,7 @@ def get_generations(model_name:str, args, seed=1, old_sequences=None, max_num_ge
     SenSimModel = SentenceTransformer('nli-roberta-large')
 
     # offline usage
-    # SenSimModel.save_pretrained("/lustre/orion/gen150/scratch/weizhigao/.cache/huggingface/offline/models/nli-roberta-large")
+    # SenSimModel.save_pretrained(f"{MODEL_PATH}/nli-roberta-large")
     # SenSimModel = SentenceTransformer(f"{MODEL_PATH}/nli-roberta-large")
 
 
