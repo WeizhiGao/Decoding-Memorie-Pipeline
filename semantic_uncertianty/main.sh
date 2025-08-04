@@ -4,7 +4,7 @@ ACTIVATE="source ~/.bashrc && conda activate dmp"
 
 temperature=0.8
 reuse_prob=0.8
-reweight_scaling=1.4
+reweight_scaling=1.1
 reweight_threshold=0.9
 
 SESSION1="baseline"
